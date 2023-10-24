@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c=_b#izmmdl7^w(reytov+q3ng$38+gs-5*ei-!k2h%0@)5&_m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -69,6 +69,8 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_REDIRECT_URL = "inicio"
 
 WSGI_APPLICATION = 'GameCrewTV.wsgi.application'
 
@@ -119,9 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media/'
-APPEND_SLASH=False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
