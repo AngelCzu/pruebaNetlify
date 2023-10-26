@@ -1,1 +1,2 @@
-# pruebaNetlify
+# contraseña oracle 
+WnfDuGZBupdT7MJ
