@@ -1,6 +1,6 @@
 [build]
   command = "python manage.py runserver"
-  publish = "app"
+  publish = "app/tvapp/static"
 
 [context.production.environment]
   DJANGO_SETTINGS_MODULE = "GameCrewTV.settings.production"
