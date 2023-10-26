@@ -1,0 +1,6 @@
+[build]
+  command = "python manage.py collectstatic --noinput"
+  publish = "app"
+
+[context.production.environment]
+  DJANGO_SETTINGS_MODULE = "GameCrewTV.settings.production"
