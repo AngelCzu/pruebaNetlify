@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-c=_b#izmmdl7^w(reytov+q3ng$38+gs-5*ei-!k2h%0@)5&_m
 DEBUG = True
 
 # settings.py
-ALLOWED_HOSTS = ['gamecrewtv-i0fj5amf2-angels-projects-608e2fa2.vercel.app', 'gamecrewtv-iflk1crkm-angels-projects-608e2fa2.vercel.app']
+ALLOWED_HOSTS = ['gamecrewtv-9z1ifr6r3-angels-projects-608e2fa2.vercel.app']
+
 
 
 
