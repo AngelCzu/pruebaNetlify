@@ -6,4 +6,4 @@
 
 [[redirects]]
   from = "/*"
-  to = "/templates/"
+  to = "app/tvapp/templates/"
