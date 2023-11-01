@@ -1,5 +1,6 @@
 [build]
   command = "python manage.py migrate && python manage.py collectstatic --noinput"
-  publish = "app/tvapp/templates"  # Directorio que Netlify publicará (ajusta según tu estructura de proyecto).
+  publish = "app/tvapp"  # Directorio que Netlify publicará (ajusta según tu estructura de proyecto).
   functions = "netlify/functions"  # Directorio donde puedes definir funciones de Netlify (si es necesario).
   environment = { DJANGO_SETTINGS_MODULE = "GameCrewTV.settings" }
+
