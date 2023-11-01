@@ -6,4 +6,4 @@
 
 [[redirects]]
   from = "/*"
-  to = "/app/tvpp/templates/inicio.html"
+  to = "/templates/inicio.html"
