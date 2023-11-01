@@ -1,5 +1,4 @@
 [build]
-  base = "."  # Ruta donde Netlify instala dependencias y ejecuta el comando de construcción.
   command = "python manage.py migrate && python manage.py collectstatic --noinput"
   publish = "app/tvapp/static"  # Directorio que Netlify publicará (ajusta según tu estructura de proyecto).
   functions = "netlify/functions"  # Directorio donde puedes definir funciones de Netlify (si es necesario).
