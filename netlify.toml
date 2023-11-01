@@ -1,5 +1,5 @@
 [build]
-  command = "python manage.py runserver"
+  command = "python manage.py migrate && python manage.py collectstatic --noinput"
   publish = "app/tvapp/static"
 
 [context.production.environment]
