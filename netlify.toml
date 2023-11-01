@@ -5,7 +5,7 @@
   functions = "netlify/functions"  # Directorio donde puedes definir funciones de Netlify (si es necesario).
 
 [context.production.environment]
-  DJANGO_SETTINGS_MODULE = "nombre_de_tu_proyecto.settings.production"
+  DJANGO_SETTINGS_MODULE = "GameCrewTV.settings.production"
   DATABASE_URL = "sqlite:///db.sqlite"
   SECRET_KEY = "django-insecure-c=_b#izmmdl7^w(reytov+q3ng$38+gs-5*ei-!k2h%0@)5&_m"
 
