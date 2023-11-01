@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-c=_b#izmmdl7^w(reytov+q3ng$38+gs-5*ei-!k2h%0@)5&_m
 DEBUG = True
 
 # settings.py
-ALLOWED_HOSTS = ['prueba-netlify-kbgz.vercel.app']
+ALLOWED_HOSTS = []
 
 
 
