@@ -6,4 +6,4 @@
 
 [[redirects]]
   from = "/*"
-  to = "/templates/inicio.html"
+  to = "/templates/"
