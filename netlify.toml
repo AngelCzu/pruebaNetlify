@@ -7,4 +7,3 @@
 [[redirects]]
   from = "/*"
   to = "/templates/inicio.html"
-  
