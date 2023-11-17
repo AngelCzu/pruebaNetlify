@@ -22,7 +22,7 @@
 
             {% for s in nomSala %}
             <div class="col-md-3">
-                <a href="streamViewer" >
+                <a type="submit" href="{% url 'streamViewer' nombreSala=s.nombreSala %}">
                     <div class="card" style="width: 18rem;">
                     
                         <img src="static/img/ibai.jpg" class="card-img-top custom-card-img" alt="...">

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import threading
+from django.utils import timezone
 
 def agregar_puntos(usuario, cantidad):
     perfil, creado = Puntos.objects.get_or_create(usuario=usuario)
@@ -68,6 +69,24 @@ def perfil(request):
     email = usuario_actual.email
     puntos_usuario = Puntos.objects.get(usuario=request.user)
     return render(request, 'perfil.html', {'puntos_usuario': puntos_usuario})
+
+@login_required
+def editar_perfil(request):
+    if request.method == 'POST':
+        # Obtiene los datos del formulario
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+
+        # Actualiza los datos del usuario
+        user = request.user
+        user.username = username
+        user.email = email
+        user.save()
+
+        # Redirige de vuelta al perfil
+        return redirect('perfil')
+
+    return render(request, 'editar_perfil.html')
     
 def streamStramer(request):
     return render(request, 'streamStramer.html')
@@ -80,17 +99,31 @@ def sala_form(request):
         return redirect('/streamStramer')
     return render(request, 'formuSala.html')
 
-@login_required
-def streamViewer(request):
+
+def streamViewer(request,nombreSala):
     usuario_actual = request.user
 
-    # Comenzar un hilo para agregar puntos en segundo plano
-    puntos_thread = threading.Thread(target=agregar_puntos_periodicamente, args=(usuario_actual,))
-    puntos_thread.daemon = True  # El hilo se detendrá cuando el programa principal se cierre
-    puntos_thread.start()
+    salas_nombreSala = Sala.objects.get(nombreSala=nombreSala)
+
+    if request.method == 'POST':
+        
+        mensaje_contenido = request.POST.get('mensaje')
+        
+        # Guardar el mensaje en la base de datos
+        
+
+        mensaje = Mensaje.objects.create(
+            sala=salas_nombreSala,
+            usuario=usuario_actual,
+            contenido=mensaje_contenido,
+            timestamp=timezone.now(),
+        )
+        mensaje.save()
+
+        return redirect('/inicio')  # Redirigir para evitar reenvío del formulario
+
+    # Resto de tu código para obtener puntos, mensajes, etc.
     puntos_usuario = Puntos.objects.get(usuario=request.user)
+    mensajes = Mensaje.objects.all()
 
-    return render(request, 'streamViewer.html', {'puntos_usuario': puntos_usuario})
-
-
-
+    return render(request, 'streamViewer.html', {'puntos_usuario': puntos_usuario, 'mensajes': mensajes, 'sala':salas_nombreSala})
