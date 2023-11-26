@@ -1,15 +1,16 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "GameCrewTV/wsgi.py",
-      "use": "@vercel/python"
+    "version": 2,
+    "builds": [
+      {
+        "src": "GameCrewTV/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "GameCrewTV" }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "GameCrewTV.settings"
     }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "GameCrewTV/wsgi.py" }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "GameCrewTV.settings"
   }
-}
+  
