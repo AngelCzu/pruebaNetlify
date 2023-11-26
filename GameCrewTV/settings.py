@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c=_b#izmmdl7^w(reytov+q3ng$38+gs-5*ei-!k2h%0@)5&_m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.cleverapps.io','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'GameCrewTV.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -135,12 +135,10 @@ LOGOUT_REDIRECT_URL = '/inicio'
 
 # STATIC_ROOT es el directorio donde se recopilarán todos los archivos estáticos para producción.
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_URL = 'static'
-STATICFILES_DIRS = 'tvapp/static'
+STATIC_URL = 'static/'
 
-STATIC_FILES_PATH= 'static/'
-STATIC_URL_PREFIX= '/public'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 APPEND_SLASH=False
