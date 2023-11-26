@@ -1,6 +1,6 @@
 {
     "static": {
-      "root": "static/",
+      "root": "tvapp/static/",
       "pattern": "/static/*"
     }
   }
