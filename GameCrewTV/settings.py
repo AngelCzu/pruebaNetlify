@@ -134,9 +134,7 @@ LOGOUT_REDIRECT_URL = '/inicio'
 
 
 # STATIC_ROOT es el directorio donde se recopilarán todos los archivos estáticos para producción.
-STATIC_ROOT = os.path.join(BASE_DIR, 'tvapp', 'static')
 
-STATIC_URL = '/static/'
 STATIC_FILES_PATH= 'static/'
 STATIC_URL_PREFIX= '/public'
 MEDIA_URL = 'media/'
