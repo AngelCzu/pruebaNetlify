@@ -1,7 +1,0 @@
-{
-    "static": {
-      "root": "tvapp/static/",
-      "pattern": "/static/*"
-    }
-  }
-  
