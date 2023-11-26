@@ -136,7 +136,7 @@ LOGOUT_REDIRECT_URL = '/inicio'
 # STATIC_ROOT es el directorio donde se recopilarán todos los archivos estáticos para producción.
 
 
-STATIC_URL = '/home/bas/app_a15bc2a4-30aa-43c4-9dc9-c7562397a6f6/tvapp/static/'
+STATIC_URL = 'app_a15bc2a4-30aa-43c4-9dc9-c7562397a6f6/tvapp/static/'
 
 
 STATIC_FILES_PATH= 'static/'
