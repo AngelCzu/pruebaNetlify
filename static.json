@@ -1,0 +1,7 @@
+{
+    "static": {
+      "root": "static/",
+      "pattern": "/static/*"
+    }
+  }
+  
