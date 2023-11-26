@@ -27,7 +27,10 @@ SECRET_KEY = 'django-insecure-c=_b#izmmdl7^w(reytov+q3ng$38+gs-5*ei-!k2h%0@)5&_m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+
+
 
 
 # Application definition
@@ -39,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.tvapp'
+    'tvapp'
 ]
 
 MIDDLEWARE = [
@@ -52,12 +55,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'GameCrewTV.urls'
+ROOT_URLCONF = 'gamecrewtv.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'app/tvapp/templates'],  # Reemplaza 'tu_app' por el nombre de tu aplicación
+        'DIRS': [BASE_DIR, 'tvapp/templates'],  # Reemplaza 'tu_app' por el nombre de tu aplicación
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'GameCrewTV.wsgi'
+WSGI_APPLICATION = 'gamecrewtv.wsgi.application'
 
 
 # Database
@@ -124,15 +127,25 @@ LOGOUT_REDIRECT_URL = '/inicio'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+
+
+
+# STATIC_ROOT es el directorio donde se recopilarán todos los archivos estáticos para producción.
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = 'static/'
-
-
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 APPEND_SLASH=False
-DEBUG = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_PASSWORD = 'Arquitectura54' # Ingrese su password de correo
+EMAIL_HOST_USER = 'arquitecura42@zohomail.com' # ingrese su correo de gmail
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
