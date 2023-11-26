@@ -137,7 +137,7 @@ LOGOUT_REDIRECT_URL = '/inicio'
 
 
 STATIC_URL = 'static'
-
+STATICFILES_DIRS = 'tvapp/static'
 
 STATIC_FILES_PATH= 'static/'
 STATIC_URL_PREFIX= '/public'
