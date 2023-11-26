@@ -7,7 +7,7 @@
 {% block content %}
     <h2>Compra de Solespe</h2>
     <form method="post" >
-        {% csrf_token %}
+        
         {{ form.as_p }}
         {% csrf_token %}
         <button type="submit">Comprar Solespe</button>
