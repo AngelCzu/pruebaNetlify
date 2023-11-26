@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c=_b#izmmdl7^w(reytov+q3ng$38+gs-5*ei-!k2h%0@)5&_m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.cleverapps.io']
 
 
 
@@ -135,7 +135,7 @@ LOGOUT_REDIRECT_URL = '/inicio'
 
 # STATIC_ROOT es el directorio donde se recopilarán todos los archivos estáticos para producción.
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'tvapp','static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = 'static/'
 
