@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'gamecrewtv.urls'
+ROOT_URLCONF = 'GameCrewTV.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gamecrewtv.wsgi.application'
+WSGI_APPLICATION = 'GameCrewTV.wsgi.application'
 
 
 # Database
@@ -84,9 +84,10 @@ WSGI_APPLICATION = 'gamecrewtv.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join('/tmp', 'db.sqlite3'),
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
+
 
 
 # Password validation
